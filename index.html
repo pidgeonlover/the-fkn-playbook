@@ -609,6 +609,61 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
 }
 .price-fine strong{font-weight:800}
 
+/* ---------- pre-sale ---------- */
+a.presale-bar{
+  display:block;text-decoration:none;
+  background:var(--ink);color:var(--card);
+  border-bottom:var(--bd-thick);
+  text-align:center;padding:10px 18px 7px;
+  font-family:'Bangers',cursive;
+  font-size:clamp(.9rem,2.1vw,1.12rem);
+  letter-spacing:.03em;line-height:1.32;
+}
+a.presale-bar b{color:var(--yellow);font-weight:400}
+a.presale-bar:hover{background:#241d16}
+.presale-flag{
+  display:inline-block;
+  font-family:'Bangers',cursive;font-size:1rem;letter-spacing:.04em;
+  background:var(--red);color:var(--white);
+  border:var(--bd);box-shadow:var(--shadow-sm);
+  padding:7px 15px 4px;transform:rotate(-2deg);
+  margin-bottom:18px;
+}
+.price-old{
+  font-family:'Bangers',cursive;font-size:1.25rem;letter-spacing:.03em;
+  opacity:.85;
+}
+.price-old s{color:var(--red);text-decoration-thickness:3px}
+.price-save{
+  position:absolute;top:-24px;right:-16px;z-index:3;
+  width:130px;height:130px;
+  background:var(--red);color:var(--white);
+  display:grid;place-items:center;text-align:center;
+  font-family:'Bangers',cursive;
+  font-size:1.5rem;line-height:.92;letter-spacing:.02em;
+  padding:22px;
+  transform:rotate(12deg);
+  filter:drop-shadow(4px 4px 0 var(--ink));
+  clip-path:polygon(50% 0%,60.2% 18.6%,79.4% 9.5%,76.7% 30.6%,97.6% 34.5%,83% 50%,97.6% 65.5%,76.7% 69.4%,79.4% 90.5%,60.2% 81.4%,50% 100%,39.8% 81.4%,20.6% 90.5%,23.3% 69.4%,2.4% 65.5%,17% 50%,2.4% 34.5%,23.3% 30.6%,20.6% 9.5%,39.8% 18.6%);
+}
+.countdown-wrap{margin:18px 0 4px}
+.countdown__label{
+  font-family:'Bangers',cursive;font-size:1.05rem;letter-spacing:.03em;
+  margin-bottom:9px;
+}
+.countdown{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.cd-unit{
+  background:var(--ink);color:var(--card);
+  border:2px solid var(--ink);
+  min-width:72px;padding:9px 8px 7px;
+}
+.cd-num{font-family:'Anton',sans-serif;font-size:2rem;line-height:.85}
+.cd-lbl{
+  font-family:'Bangers',cursive;font-size:.74rem;
+  letter-spacing:.07em;opacity:.8;margin-top:4px;
+}
+.cd-done{font-family:'Bangers',cursive;font-size:1.25rem;color:var(--red)}
+
 /* ---------- final cta ---------- */
 .final{text-align:center}
 .final h2{
@@ -665,6 +720,7 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
   .tgrid{grid-template-columns:1fr 1fr}
   .nav__links{display:none}
   .starburst{width:122px;height:122px;font-size:.96rem;top:-30px;right:-6px;padding:20px}
+  .price-save{width:104px;height:104px;font-size:1.2rem;top:-18px;right:-6px;padding:16px}
 }
 @media(max-width:680px){
   .who-grid{grid-template-columns:1fr}
@@ -697,6 +753,9 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
 </head>
 <body>
 
+<!-- ================= PRE-SALE BAR ================= -->
+<a class="presale-bar" href="#pricing">Pre-sale is live. Reserve your slot for <b>$599</b> before the July 1 launch, then the price becomes $1,699.</a>
+
 <!-- ================= NAV ================= -->
 <nav class="nav">
   <div class="nav__in">
@@ -710,7 +769,7 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
       <a href="#why-me">Why Me</a>
       <a href="#guarantee">Guarantee</a>
     </div>
-    <a class="btn btn--sm js-checkout" href="#pricing">Enroll · €1,499</a>
+    <a class="btn btn--sm js-checkout" href="#pricing">Reserve · $599</a>
   </div>
 </nav>
 
@@ -737,8 +796,9 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
         Europe's leading OTAs, scaled Blindspot across the globe, and made GME GO BRRR the
         most-upvoted Reddit post in history on an $18 budget.</p>
 
-      <a class="btn btn--lg js-checkout" href="#pricing">Enroll Now · €1,499 →</a>
-      <p class="hero__cta-note">One-time payment · Lifetime access · ROI-refund guarantee</p>
+      <div><span class="presale-flag">Pre-sale live · save $1,100 before July 1</span></div>
+      <a class="btn btn--lg js-checkout" href="#pricing">Reserve Your Slot · $599 →</a>
+      <p class="hero__cta-note">Pre-sale price · $1,100 off the $1,699 launch price · lifetime access</p>
 
       <form class="signup js-signup">
         <p class="signup__label">Not ready to commit? Get launch updates →</p>
@@ -949,7 +1009,7 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
         <h3>The growth stack</h3>
         <p>The actual tools, with prices, setup walkthroughs and templates. No-code automation,
           analytics and instrumentation, CRM and lifecycle, creator and UGC tools,
-          scheduling. A complete growth stack assembled for under €500 per month.</p>
+          scheduling. A complete growth stack assembled for under $500 per month.</p>
       </article>
 
       <article class="panel mod reveal">
@@ -966,7 +1026,7 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
         <p style="color:var(--card)">This isn't a strategy or a positioning deck. It's
           something you follow to the letter and apply to your use case. You don't need
           to be a genius. You need to ship.</p>
-        <a class="btn btn--sm js-checkout" href="#pricing" style="margin-top:16px;align-self:flex-start">See Pricing →</a>
+        <a class="btn btn--sm js-checkout" href="#pricing" style="margin-top:16px;align-self:flex-start">Reserve Your Slot →</a>
       </article>
     </div>
   </div>
@@ -1094,37 +1154,37 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
       <h2 class="h-sec">Don't just take my f**king word for it.</h2>
     </div>
 
-    <!-- SAMPLE testimonials — replace with real beta-cohort quotes (names + companies) before public launch -->
+    <!-- SAMPLE testimonials (placeholders) - replace with real quotes from people Matei has built systems for or advised, before public launch -->
     <div class="tgrid">
       <article class="panel tcard reveal">
         <div class="tcard__stars" aria-hidden="true">★★★★★</div>
-        <p class="tcard__quote">"We killed our Google Ads in week 3. One creator partnership replaced the entire budget. <span class="hl">CAC down 58%.</span>"</p>
-        <p class="tcard__by">Head of Growth, Series B SaaS</p>
+        <p class="tcard__quote">"Matei rebuilt our content engine from scratch. We went from invisible to inbound-led, and inbound now drives <span class="hl">most of our pipeline.</span>"</p>
+        <p class="tcard__by">Founder, B2B SaaS</p>
       </article>
       <article class="panel tcard reveal">
         <div class="tcard__stars" aria-hidden="true">★★★★★</div>
-        <p class="tcard__quote">"Other courses hand you frameworks to think about. This hands you a checklist to run. Four experiments shipped in a month."</p>
-        <p class="tcard__by">Marketing Director, DevTool</p>
+        <p class="tcard__quote">"I asked Matei one question about activation. We rewired the flow around his answer and <span class="hl">conversion doubled.</span>"</p>
+        <p class="tcard__by">Head of Product, Fintech</p>
       </article>
       <article class="panel tcard reveal">
         <div class="tcard__stars" aria-hidden="true">★★★★★</div>
-        <p class="tcard__quote">"Module 2 paid for the whole course in <span class="hl">9 days.</span> Then I stopped counting."</p>
-        <p class="tcard__by">Founder, Fintech startup</p>
+        <p class="tcard__quote">"He showed me the exact UGC system he ran at scale. We copied it and cut a <span class="hl">$30k/month agency.</span>"</p>
+        <p class="tcard__by">Founder, Consumer app</p>
       </article>
       <article class="panel tcard reveal">
         <div class="tcard__stars" aria-hidden="true">★★★★★</div>
-        <p class="tcard__quote">"I've paid 'growth experts' €8k a month who delivered less than chapter one of this."</p>
-        <p class="tcard__by">Founder, Series A</p>
+        <p class="tcard__quote">"Two hours with Matei reset how we think about distribution. The roadmap he sketched paid for itself in weeks."</p>
+        <p class="tcard__by">CEO, DevTool</p>
       </article>
       <article class="panel tcard reveal">
         <div class="tcard__stars" aria-hidden="true">★★★★★</div>
-        <p class="tcard__quote">"Not motivational. Not clever. It just tells you exactly what to do next. Finally."</p>
-        <p class="tcard__by">Growth Lead, Marketplace</p>
+        <p class="tcard__quote">"Matei doesn't theorize. He showed me the real dashboards, the workflows, the actual builds. Then ours started working."</p>
+        <p class="tcard__by">VP Growth, Marketplace</p>
       </article>
       <article class="panel tcard reveal">
         <div class="tcard__stars" aria-hidden="true">★★★★★</div>
-        <p class="tcard__quote">"<span class="hl">200 to 41k</span> followers on LinkedIn in one quarter. Inbound now outpaces our entire SDR team."</p>
-        <p class="tcard__by">VP Marketing, B2B SaaS</p>
+        <p class="tcard__quote">"His advice on creator-led growth took us from <span class="hl">200 to 40k</span> followers in a quarter, and the leads followed."</p>
+        <p class="tcard__by">Marketing Director, B2B SaaS</p>
       </article>
     </div>
   </div>
@@ -1134,29 +1194,42 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
 <section class="section sec--teal dots" id="pricing">
   <div class="wrap">
     <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
-      <span class="kicker">Pricing</span>
-      <h2 class="h-sec">One price. Everything. Forever.</h2>
+      <span class="kicker">Pre-sale</span>
+      <h2 class="h-sec">Reserve your slot before July 1.</h2>
     </div>
 
     <div class="panel price-box reveal">
-      <span class="price-box__tag">The F**king Playbook</span>
-      <h3>Full lifetime access</h3>
-      <div class="price-num">€1,499</div>
-      <div class="price-sub">One-time payment</div>
+      <div class="price-save" aria-hidden="true">$1,100 off</div>
+      <span class="price-box__tag">Founding pre-sale</span>
+      <h3>Lifetime access</h3>
+      <div class="price-old">Launch price <s>$1,699</s></div>
+      <div class="price-num">$599</div>
+      <div class="price-sub">Pre-sale price · reserve before July 1</div>
+
+      <div class="countdown-wrap">
+        <p class="countdown__label">Pre-sale price ends in</p>
+        <div class="countdown" id="countdown" data-deadline="2026-07-01T00:00:00">
+          <div class="cd-unit"><div class="cd-num" data-cd="d">--</div><div class="cd-lbl">Days</div></div>
+          <div class="cd-unit"><div class="cd-num" data-cd="h">--</div><div class="cd-lbl">Hours</div></div>
+          <div class="cd-unit"><div class="cd-num" data-cd="m">--</div><div class="cd-lbl">Mins</div></div>
+        </div>
+      </div>
 
       <ul class="price-list">
+        <li><span class="mark mark--ok" aria-hidden="true">✓</span> Founding pre-sale price, $1,100 below the $1,699 launch price</li>
         <li><span class="mark mark--ok" aria-hidden="true">✓</span> All 7 modules, ~12–15 hours of content</li>
         <li><span class="mark mark--ok" aria-hidden="true">✓</span> Every template, script, and playbook</li>
         <li><span class="mark mark--ok" aria-hidden="true">✓</span> Tool walkthroughs &amp; the complete growth stack</li>
-        <li><span class="mark mark--ok" aria-hidden="true">✓</span> Lifetime access. Buy once, keep it forever</li>
-        <li><span class="mark mark--ok" aria-hidden="true">✓</span> Quarterly content updates as the playbook evolves</li>
+        <li><span class="mark mark--ok" aria-hidden="true">✓</span> Full access the day it launches, July 1</li>
+        <li><span class="mark mark--ok" aria-hidden="true">✓</span> Lifetime access plus quarterly updates</li>
         <li><span class="mark mark--ok" aria-hidden="true">✓</span> The ROI-refund guarantee</li>
       </ul>
 
-      <a class="btn btn--lg js-checkout" href="#" style="width:100%;justify-content:center">Enroll Now →</a>
-      <p class="price-fine">Expensing through a company budget? It's invoiced as the
-        <strong>"Growth Engineering Playbook"</strong>, same product, finance-friendly
-        label for your accounting team.</p>
+      <a class="btn btn--lg js-checkout" href="#" style="width:100%;justify-content:center">Reserve My Slot · $599 →</a>
+      <p class="price-fine">On July 1 the playbook launches and the price becomes $1,699.
+        Reserve now and your $599 founding price is locked in for good. Expensing through a
+        company budget? It's invoiced as the <strong>"Growth Engineering Playbook"</strong>,
+        same product, finance-friendly label for your accounting team.</p>
     </div>
   </div>
 </section>
@@ -1170,6 +1243,10 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
     </div>
 
     <div class="faq-list">
+      <details class="faq reveal">
+        <summary>What is the pre-sale, and what happens on July 1?<span class="faq__plus" aria-hidden="true"></span></summary>
+        <div class="faq__ans"><p>Right now you can reserve your slot for $599. The playbook launches on July 1, when the price becomes $1,699 and you get full access. Reserve before launch and your $599 founding price is locked in, that's $1,100 saved.</p></div>
+      </details>
       <details class="faq reveal">
         <summary>Is this for beginners?<span class="faq__plus" aria-hidden="true"></span></summary>
         <div class="faq__ans"><p>No. If you've never run growth, marketing, or product, this isn't your starting point. It's built for operators leveling up a function that already exists.</p></div>
@@ -1207,10 +1284,10 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
   <div class="wrap reveal">
     <span class="kicker">No Excuses. Just Growth.</span>
     <h2>You don't need to be a genius.<br>You need to follow the playbook.</h2>
-    <p>200–400 operators will run this playbook in year one, across startups, scaleups,
-      and their own ventures. The building is done. Distribution is the game now.</p>
+    <p>The building is done, distribution is the game now. Reserve your slot before July 1
+      and lock the playbook in at $599, instead of $1,699 when it launches.</p>
     <div class="final-cta-row">
-      <a class="btn btn--yellow btn--lg js-checkout" href="#">Get The F**king Playbook · €1,499 →</a>
+      <a class="btn btn--yellow btn--lg js-checkout" href="#">Reserve Your Slot · $599 →</a>
     </div>
     <form class="signup js-signup">
       <p class="signup__label">Or get launch updates &amp; early-access news →</p>
@@ -1260,7 +1337,7 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
   /* --- checkout link -----------------------------------------------------
      TODO: replace CHECKOUT_URL with your real checkout link
      (Stripe Payment Link, Gumroad, Lemon Squeezy, etc.).
-     Every "Enroll" / buy button is wired to it automatically.            */
+     Every "Reserve" / buy button is wired to it automatically.            */
   var CHECKOUT_URL = "https://YOUR-CHECKOUT-LINK-HERE";
 
   document.querySelectorAll("a.js-checkout").forEach(function(a){
@@ -1296,6 +1373,31 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
     revealEls.forEach(function(el){ io.observe(el); });
   } else {
     revealEls.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* --- pre-sale countdown ------------------------------------------------
+     Counts down to the launch date in the #countdown data-deadline attr.
+     Update the date there if the July 1 launch moves.                     */
+  var cd = document.getElementById("countdown");
+  if(cd){
+    var deadline = new Date(cd.getAttribute("data-deadline")).getTime();
+    var fD = cd.querySelector('[data-cd="d"]'),
+        fH = cd.querySelector('[data-cd="h"]'),
+        fM = cd.querySelector('[data-cd="m"]');
+    var tick = function(){
+      var diff = deadline - Date.now();
+      if(diff <= 0){
+        cd.innerHTML = '<div class="cd-done">The pre-sale has closed.</div>';
+        return false;
+      }
+      fD.textContent = Math.floor(diff / 86400000);
+      fH.textContent = Math.floor(diff % 86400000 / 3600000);
+      fM.textContent = Math.floor(diff % 3600000 / 60000);
+      return true;
+    };
+    if(tick()){
+      var cdTimer = setInterval(function(){ if(!tick()){ clearInterval(cdTimer); } }, 30000);
+    }
   }
 })();
 </script>
