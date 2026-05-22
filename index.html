@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The F**king Playbook: Engineering Growth for Idiots | Matei Psatta</title>
+<meta name="description" content="A 7-module, step-by-step playbook for engineering creator-led, product-led growth in 2026. Built from the real campaigns behind Vola.ro, Blindspot, and the #1 most-upvoted Reddit post in history.">
+<meta name="author" content="Matei Psatta">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="The F**king Playbook: Engineering Growth for Idiots">
+<meta property="og:description" content="The step-by-step playbook for engineering growth in 2026. You don't need to be a genius. You need to follow the f**king playbook.">
+<meta property="og:image" content="playbook-cover.png">
+<meta property="og:image:width" content="1054">
+<meta property="og:image:height" content="1492">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;circle cx='50' cy='50' r='49' fill='%231a1510'/&gt;&lt;circle cx='50' cy='50' r='40' fill='%23e5392c'/&gt;&lt;circle cx='50' cy='50' r='26' fill='%23f4ebd2'/&gt;&lt;circle cx='50' cy='50' r='12' fill='%23e5392c'/&gt;&lt;/svg&gt;">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Bangers&family=Pirata+One&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   THE F**KING PLAYBOOK landing page
+   ============================================================ */
+
+:root{
+  --teal:#21bdcb;
+  --teal-dk:#168f9b;
+  --red:#e5392c;
+  --red-dk:#bd281d;
+  --yellow:#ffd53c;
+  --ink:#1a1510;
+  --paper:#f4ebd2;   /* warm section background */
+  --card:#fbf5e2;    /* cream card */
+  --white:#fffef8;
+  --shadow:7px 7px 0 var(--ink);
+  --shadow-sm:4px 4px 0 var(--ink);
+  --shadow-lg:11px 11px 0 var(--ink);
+  --bd:3px solid var(--ink);
+  --bd-thick:4px solid var(--ink);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+
+body{
+  font-family:'Archivo',system-ui,-apple-system,sans-serif;
+  background:var(--teal);
+  color:var(--ink);
+  line-height:1.55;
+  font-weight:500;
+  overflow-x:hidden;
+}
+
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+
+/* paper-grain overlay */
+body::after{
+  content:"";
+  position:fixed;inset:0;
+  z-index:9000;
+  pointer-events:none;
+  opacity:.05;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- type ---------- */
+.bangers{font-family:'Bangers',cursive;font-weight:400;letter-spacing:.02em}
+.anton{font-family:'Anton',sans-serif;font-weight:400}
+
+h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-spacing:.015em}
+
+/* ---------- layout ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.section{position:relative;padding:clamp(60px,8.5vw,116px) 0}
+.section[id]{scroll-margin-top:80px}
+
+.sec--teal{background:var(--teal)}
+.sec--paper{background:var(--paper)}
+.sec--red{background:var(--red);color:var(--white)}
+.sec--ink{background:var(--ink);color:var(--card)}
+
+/* halftone dot texture */
+.dots::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(currentColor 1.1px,transparent 1.4px);
+  background-size:15px 15px;
+  opacity:.10;
+}
+.sec--teal.dots::before,.sec--paper.dots::before{color:#000}
+.sec--red.dots::before{color:#000;opacity:.13}
+
+/* ---------- kicker + headings ---------- */
+.kicker{
+  display:inline-block;
+  font-family:'Bangers',cursive;
+  font-size:clamp(.85rem,2.2vw,1.05rem);
+  letter-spacing:.06em;
+  background:var(--yellow);
+  color:var(--ink);
+  border:var(--bd);
+  box-shadow:var(--shadow-sm);
+  padding:5px 16px 3px;
+  transform:rotate(-2.5deg);
+  margin-bottom:22px;
+}
+
+.h-sec{
+  font-size:clamp(2.4rem,6.4vw,4.6rem);
+  text-transform:uppercase;
+}
+.lead{
+  font-size:clamp(1.05rem,2vw,1.3rem);
+  font-weight:600;
+  max-width:62ch;
+}
+
+/* highlighter mark */
+.hl{
+  background:linear-gradient(180deg,transparent 8%,var(--yellow) 8%,var(--yellow) 88%,transparent 88%);
+  padding:0 .12em;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
+.hl-red{color:var(--red)}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.5em;
+  font-family:'Bangers',cursive;font-weight:400;
+  letter-spacing:.04em;
+  font-size:clamp(1.05rem,2vw,1.35rem);
+  line-height:1.12;
+  padding:16px 30px 13px;
+  border:var(--bd-thick);
+  box-shadow:var(--shadow);
+  background:var(--red);color:var(--white);
+  cursor:pointer;
+  text-decoration:none;
+  transition:transform .08s ease,box-shadow .08s ease;
+  white-space:normal;
+  text-align:center;
+  max-width:100%;
+}
+.btn:hover{transform:translate(3px,3px);box-shadow:4px 4px 0 var(--ink)}
+.btn:active{transform:translate(7px,7px);box-shadow:0 0 0 var(--ink)}
+.btn--yellow{background:var(--yellow);color:var(--ink)}
+.btn--ink{background:var(--ink);color:var(--card)}
+.btn--lg{font-size:clamp(1.25rem,2.6vw,1.75rem);padding:20px 40px 16px}
+.btn--sm{font-size:1rem;padding:12px 20px 9px;border-width:3px;box-shadow:var(--shadow-sm)}
+.btn--sm:hover{box-shadow:2px 2px 0 var(--ink)}
+
+:focus-visible{outline:4px solid var(--ink);outline-offset:3px}
+
+/* ---------- panel / sticker ---------- */
+.panel{
+  background:var(--card);
+  border:var(--bd);
+  box-shadow:var(--shadow);
+}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:8000;
+  background:var(--teal);
+  border-bottom:var(--bd-thick);
+}
+.nav__in{
+  max-width:1180px;margin:0 auto;
+  display:flex;align-items:center;gap:18px;
+  padding:11px 24px;
+}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto}
+.brand__mark{
+  width:42px;height:42px;flex:none;
+  background:var(--red);border:var(--bd);
+  display:grid;place-items:center;
+  font-family:'Bangers',cursive;color:var(--white);
+  font-size:1.2rem;box-shadow:var(--shadow-sm);
+  transform:rotate(-4deg);
+}
+.brand__txt{
+  font-family:'Bangers',cursive;font-size:1.4rem;
+  letter-spacing:.03em;line-height:.9;
+}
+.nav__links{display:flex;gap:22px;align-items:center}
+.nav__links a{
+  font-family:'Bangers',cursive;font-size:1.05rem;
+  text-decoration:none;letter-spacing:.03em;
+  border-bottom:3px solid transparent;
+}
+.nav__links a:hover{border-bottom-color:var(--red)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:clamp(38px,6vw,72px) 0 clamp(60px,8vw,104px)}
+.hero__grid{
+  display:grid;
+  grid-template-columns:0.92fr 1.08fr;
+  gap:clamp(32px,5vw,68px);
+  align-items:center;
+}
+.hero__art{position:relative;justify-self:center}
+.hero__art img{
+  width:min(420px,84vw);
+  border:6px solid var(--ink);
+  box-shadow:var(--shadow-lg);
+  transform:rotate(-3deg);
+}
+.hero__tape{
+  position:absolute;top:-20px;left:50%;
+  width:140px;height:38px;
+  background:rgba(255,213,60,.82);
+  border:1px solid rgba(0,0,0,.28);
+  transform:translateX(-50%) rotate(-7deg);
+  z-index:2;
+}
+
+.hero h1{
+  font-size:clamp(2.6rem,6.6vw,5rem);
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+.hero__sub{
+  font-size:clamp(1rem,1.7vw,1.22rem);
+  font-weight:600;max-width:54ch;margin-bottom:26px;
+}
+.hero__cta-note{
+  font-family:'Bangers',cursive;font-size:1.05rem;
+  letter-spacing:.03em;margin:14px 0 22px;
+}
+.hero__chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{
+  font-family:'Bangers',cursive;font-size:.98rem;letter-spacing:.03em;
+  background:var(--white);border:var(--bd);
+  box-shadow:var(--shadow-sm);
+  padding:7px 14px 4px;
+}
+.chip--teal{background:var(--teal)}
+
+/* hero decorations */
+.deco{position:absolute;pointer-events:none;z-index:1}
+.deco svg{display:block}
+.bolt-1{top:6%;left:3%;width:34px;transform:rotate(-12deg)}
+.bolt-2{top:14%;right:5%;width:30px;transform:rotate(14deg)}
+.spark-1{bottom:16%;left:6%;width:30px}
+.spark-2{top:40%;right:2%;width:24px}
+
+/* ---------- signup form ---------- */
+.signup{margin-top:8px}
+.signup__label{
+  font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:.03em;
+  margin-bottom:9px;
+}
+.signup__row{display:flex;gap:10px;flex-wrap:wrap}
+.signup input[type=email]{
+  flex:1;min-width:200px;
+  font-family:'Archivo',sans-serif;font-weight:600;font-size:1rem;
+  padding:13px 16px;
+  border:var(--bd);background:var(--white);color:var(--ink);
+  box-shadow:var(--shadow-sm);
+}
+.signup input::placeholder{color:#9a8f78}
+.signup__done{
+  display:none;
+  font-family:'Bangers',cursive;font-size:1.2rem;letter-spacing:.03em;
+  background:var(--yellow);border:var(--bd);box-shadow:var(--shadow-sm);
+  padding:11px 16px 8px;
+}
+.signup.is-done .signup__row,
+.signup.is-done .signup__label{display:none}
+.signup.is-done .signup__done{display:block}
+
+/* ---------- marquee ---------- */
+.marquee{
+  background:var(--ink);color:var(--card);
+  border-top:var(--bd-thick);border-bottom:var(--bd-thick);
+  overflow:hidden;padding:14px 0;
+}
+.marquee__track{
+  display:flex;width:max-content;
+  animation:scroll 34s linear infinite;
+}
+.marquee:hover .marquee__track{animation-play-state:paused}
+.marquee__item{
+  font-family:'Bangers',cursive;
+  font-size:clamp(1.05rem,2.4vw,1.5rem);
+  letter-spacing:.05em;
+  padding:0 26px;display:flex;align-items:center;gap:26px;
+  white-space:nowrap;
+}
+.marquee__item::after{content:"";width:16px;height:16px;flex:none;
+  background:var(--red);
+  clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);
+}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- generic section head ---------- */
+.sec-head{margin-bottom:clamp(34px,5vw,56px);max-width:760px}
+.sec-head .lead{margin-top:16px}
+
+/* ---------- why now: cards ---------- */
+.broke-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.broke{
+  padding:30px 26px 32px;position:relative;
+}
+.broke__no{
+  font-family:'Anton',sans-serif;
+  font-size:2.6rem;color:var(--red);line-height:1;
+}
+.broke h3{
+  font-size:1.85rem;text-transform:uppercase;
+  margin:8px 0 12px;
+}
+.broke p{font-size:1rem;font-weight:500}
+.closer{
+  margin-top:34px;
+  font-family:'Bangers',cursive;
+  font-size:clamp(1.3rem,2.7vw,1.95rem);
+  letter-spacing:.02em;line-height:1.12;
+  max-width:30ch;
+}
+
+/* ---------- playbook section ---------- */
+.pb-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:clamp(34px,5vw,64px);align-items:center;
+}
+.pb-grid p{font-size:1.1rem;font-weight:600;margin-bottom:16px;max-width:46ch}
+.pb-art{position:relative;display:flex;flex-direction:column;align-items:center;gap:36px}
+
+/* speech bubble */
+.bubble{
+  align-self:flex-start;
+  background:var(--white);border:var(--bd);box-shadow:var(--shadow-sm);
+  border-radius:26px;
+  padding:18px 24px;
+  font-family:'Bangers',cursive;
+  font-size:1.5rem;letter-spacing:.02em;line-height:1.04;
+  transform:rotate(-3deg);
+  position:relative;
+}
+.bubble .hl-red{color:var(--red)}
+.bubble::after{
+  content:"";position:absolute;left:46px;bottom:-22px;
+  width:30px;height:30px;background:var(--white);
+  border-right:var(--bd);border-bottom:var(--bd);
+  transform:rotate(38deg) skew(-8deg);
+}
+
+/* clipboard note */
+.note{
+  position:relative;align-self:flex-end;
+  background:var(--card);border:var(--bd);box-shadow:var(--shadow);
+  padding:34px 30px 30px;
+  width:min(340px,86vw);
+  transform:rotate(2.5deg);
+}
+.tape{
+  position:absolute;width:104px;height:30px;
+  background:rgba(255,213,60,.8);
+  border:1px solid rgba(0,0,0,.25);
+}
+.tape--l{top:-13px;left:18px;transform:rotate(-22deg)}
+.tape--r{top:-13px;right:18px;transform:rotate(20deg)}
+.note__list{list-style:none;display:flex;flex-direction:column;gap:15px}
+.note__list li{
+  display:flex;align-items:center;gap:13px;
+  font-family:'Bangers',cursive;
+  font-size:1.5rem;letter-spacing:.02em;line-height:1;
+  text-transform:uppercase;
+}
+.note__num{
+  flex:none;width:34px;height:34px;
+  background:var(--red);color:var(--white);
+  border:2px solid var(--ink);border-radius:50%;
+  display:grid;place-items:center;
+  font-size:1.25rem;padding-top:3px;
+}
+.pb-tag{
+  font-family:'Bangers',cursive;font-size:1.05rem;letter-spacing:.04em;
+  display:flex;align-items:center;gap:10px;margin-top:6px;
+}
+.pb-tag svg{width:42px;flex:none}
+
+/* ---------- who is for ---------- */
+.who-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  margin-bottom:24px;
+}
+.who-card{padding:30px 28px}
+.who-card h3{font-size:1.95rem;text-transform:uppercase;margin-bottom:11px}
+.who-card p{font-weight:500}
+.notfor{
+  padding:30px 28px;
+}
+.notfor h3{
+  font-size:1.7rem;text-transform:uppercase;margin-bottom:18px;
+  color:var(--red);
+}
+.notfor ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.notfor li{display:flex;gap:12px;font-weight:600;align-items:flex-start}
+.mark{
+  flex:none;width:26px;height:26px;border-radius:50%;
+  border:2px solid var(--ink);
+  display:grid;place-items:center;font-weight:900;font-size:.95rem;
+  margin-top:1px;
+}
+.mark--x{background:var(--red);color:var(--white)}
+
+/* ---------- curriculum ---------- */
+.mod-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+}
+.mod{
+  padding:28px 26px 30px;position:relative;
+}
+.mod__top{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.mod__no{font-family:'Anton',sans-serif;font-size:3rem;line-height:.8;color:var(--red)}
+.mod__lbl{font-family:'Bangers',cursive;font-size:.95rem;letter-spacing:.08em;opacity:.65}
+.mod h3{font-size:1.7rem;text-transform:uppercase;margin-bottom:10px}
+.mod p{font-size:1rem;font-weight:500}
+.mod--core{border-color:var(--red);box-shadow:7px 7px 0 var(--red-dk)}
+.mod__flag{
+  position:absolute;top:-15px;right:-12px;
+  background:var(--red);color:var(--white);
+  font-family:'Bangers',cursive;font-size:.95rem;letter-spacing:.05em;
+  border:2px solid var(--ink);box-shadow:var(--shadow-sm);
+  padding:6px 13px 3px;transform:rotate(7deg);
+}
+
+/* ---------- why me ---------- */
+.me-lead{margin-bottom:34px}
+.stat-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  margin-bottom:30px;
+}
+.stat{padding:26px 22px 24px;text-align:left}
+.stat__big{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(2.4rem,4.4vw,3.4rem);
+  color:var(--red);line-height:.9;
+}
+.stat__txt{font-weight:600;margin-top:8px;font-size:.98rem}
+.me-bio{
+  padding:28px 30px;
+  display:flex;gap:22px;align-items:flex-start;
+}
+.me-photo{
+  flex:none;width:158px;height:190px;position:relative;
+  border:var(--bd);box-shadow:var(--shadow-sm);
+  background:var(--yellow);overflow:hidden;
+  transform:rotate(-3deg);
+}
+.me-photo img{
+  position:relative;z-index:1;
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+.me-photo__ph{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:9px;text-align:center;padding:12px;
+  font-family:'Bangers',cursive;font-size:.92rem;letter-spacing:.04em;
+  color:var(--ink);
+}
+.me-name{font-family:'Bangers',cursive;font-size:clamp(1.9rem,3.6vw,2.5rem);line-height:.95}
+.me-role{
+  font-family:'Bangers',cursive;font-size:1.04rem;letter-spacing:.04em;
+  color:var(--red);margin:5px 0 13px;
+}
+.me-bio p{font-weight:600}
+.logos{
+  margin-top:22px;display:flex;flex-wrap:wrap;gap:9px;
+}
+.logos span{
+  font-family:'Bangers',cursive;font-size:.92rem;letter-spacing:.04em;
+  border:2px solid var(--ink);background:var(--white);
+  padding:5px 11px 2px;
+}
+
+/* ---------- format ---------- */
+.fmt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+.fmt{padding:28px 24px;text-align:center}
+.fmt__ico{
+  width:58px;height:58px;margin:0 auto 14px;
+  background:var(--red);border:var(--bd);border-radius:50%;
+  display:grid;place-items:center;
+}
+.fmt__ico svg{width:30px}
+.fmt h3{font-size:1.5rem;text-transform:uppercase;margin-bottom:8px}
+.fmt p{font-weight:500;font-size:.97rem}
+.fmt-quote{
+  margin-top:34px;text-align:center;
+  font-family:'Bangers',cursive;
+  font-size:clamp(1.4rem,3vw,2.3rem);letter-spacing:.02em;
+}
+
+/* ---------- testimonials ---------- */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tcard{padding:26px 26px 24px;display:flex;flex-direction:column;gap:13px;color:var(--ink)}
+.tcard__stars{
+  display:flex;gap:4px;color:var(--red);
+  font-size:1.15rem;line-height:1;letter-spacing:.08em;
+}
+.tcard__quote{font-weight:800;font-size:1.16rem;line-height:1.36}
+.tcard__by{
+  margin-top:auto;padding-top:6px;
+  font-family:'Bangers',cursive;font-size:1.08rem;letter-spacing:.03em;
+}
+.tcard__by::before{
+  content:"";display:inline-block;vertical-align:.14em;
+  width:22px;height:4px;background:var(--red);margin-right:9px;
+}
+
+/* ---------- faq ---------- */
+.faq-list{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+.faq{background:var(--card);border:var(--bd);box-shadow:var(--shadow-sm)}
+.faq summary{
+  list-style:none;cursor:pointer;
+  padding:19px 22px;
+  font-family:'Bangers',cursive;
+  font-size:clamp(1.15rem,2.3vw,1.45rem);letter-spacing:.02em;line-height:1.08;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq__plus{
+  flex:none;width:30px;height:30px;
+  background:var(--red);border:2px solid var(--ink);border-radius:50%;
+  position:relative;transition:transform .2s ease;
+}
+.faq__plus::before,.faq__plus::after{
+  content:"";position:absolute;top:50%;left:50%;
+  background:var(--white);transform:translate(-50%,-50%);
+}
+.faq__plus::before{width:13px;height:3.4px}
+.faq__plus::after{width:3.4px;height:13px}
+.faq[open] .faq__plus{transform:rotate(135deg)}
+.faq__ans{padding:2px 22px 20px;font-weight:600}
+.faq__ans p{max-width:66ch}
+
+/* ---------- guarantee ---------- */
+.guar-wrap{position:relative;max-width:880px;margin:0 auto}
+.guar{
+  padding:clamp(34px,5vw,56px);
+}
+.guar h2{font-size:clamp(2.2rem,5.4vw,3.6rem);text-transform:uppercase;margin-bottom:16px}
+.guar p{font-weight:600;font-size:1.08rem;margin-bottom:14px}
+.guar .punch{
+  font-family:'Bangers',cursive;font-size:1.5rem;letter-spacing:.02em;
+  color:var(--red);
+}
+.starburst{
+  position:absolute;top:-46px;right:-30px;z-index:3;
+  width:168px;height:168px;
+  background:var(--red);color:var(--white);
+  display:grid;place-items:center;text-align:center;
+  font-family:'Bangers',cursive;
+  font-size:1.32rem;line-height:1;letter-spacing:.03em;
+  padding:30px;
+  transform:rotate(13deg);
+  filter:drop-shadow(5px 5px 0 var(--ink));
+  clip-path:polygon(50% 0%,60.2% 18.6%,79.4% 9.5%,76.7% 30.6%,97.6% 34.5%,83% 50%,97.6% 65.5%,76.7% 69.4%,79.4% 90.5%,60.2% 81.4%,50% 100%,39.8% 81.4%,20.6% 90.5%,23.3% 69.4%,2.4% 65.5%,17% 50%,2.4% 34.5%,23.3% 30.6%,20.6% 9.5%,39.8% 18.6%);
+}
+
+/* ---------- pricing ---------- */
+.price-box{
+  max-width:560px;margin:0 auto;
+  padding:clamp(30px,4.5vw,46px);
+  text-align:center;position:relative;
+}
+.price-box__tag{
+  font-family:'Bangers',cursive;font-size:1.15rem;letter-spacing:.05em;
+  background:var(--yellow);border:2px solid var(--ink);
+  display:inline-block;padding:5px 15px 2px;margin-bottom:14px;
+  transform:rotate(-2deg);
+}
+.price-box h3{
+  font-size:1.7rem;text-transform:uppercase;margin-bottom:6px;
+}
+.price-num{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(4rem,11vw,6.4rem);line-height:.85;
+  color:var(--red);
+}
+.price-sub{
+  font-family:'Bangers',cursive;font-size:1.15rem;letter-spacing:.04em;
+  margin-bottom:20px;
+}
+.price-list{
+  list-style:none;text-align:left;
+  display:flex;flex-direction:column;gap:11px;
+  margin:22px 0;
+  border-top:2px dashed var(--ink);border-bottom:2px dashed var(--ink);
+  padding:22px 0;
+}
+.price-list li{display:flex;gap:12px;font-weight:600;align-items:flex-start}
+.mark--ok{background:var(--teal);color:var(--ink)}
+.price-fine{
+  font-size:.86rem;font-weight:500;margin-top:18px;opacity:.85;
+}
+.price-fine strong{font-weight:800}
+
+/* ---------- final cta ---------- */
+.final{text-align:center}
+.final h2{
+  font-size:clamp(2.4rem,6.6vw,5rem);text-transform:uppercase;
+  margin-bottom:18px;
+}
+.final p{
+  font-weight:700;font-size:1.15rem;max-width:48ch;
+  margin:0 auto 30px;
+}
+.final .signup{max-width:440px;margin:24px auto 0}
+.final .signup__label{color:var(--white)}
+.final-cta-row{display:flex;justify-content:center}
+
+/* ---------- footer ---------- */
+.footer{padding:clamp(46px,6vw,72px) 0 40px}
+.footer__top{
+  display:flex;justify-content:space-between;gap:30px;
+  flex-wrap:wrap;align-items:flex-start;
+}
+.footer__brand .bangers{
+  font-size:clamp(1.8rem,4vw,2.6rem);line-height:.95;
+}
+.footer__brand p{font-weight:600;margin-top:6px;opacity:.8}
+.footer__links{display:flex;flex-direction:column;gap:8px}
+.footer__links a{
+  font-family:'Bangers',cursive;font-size:1.05rem;letter-spacing:.03em;
+  text-decoration:none;
+}
+.footer__links a:hover{color:var(--red)}
+.smiley{width:54px;height:54px}
+.footer__bottom{
+  margin-top:38px;padding-top:22px;
+  border-top:2px solid rgba(244,235,210,.25);
+  display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  font-size:.84rem;font-weight:500;opacity:.75;
+}
+
+/* ---------- reveal animation ---------- */
+.js .reveal{opacity:0;transform:translateY(26px)}
+.js .reveal.in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
+
+/* ---------- responsive ---------- */
+@media(max-width:960px){
+  .hero__grid{grid-template-columns:1fr;text-align:center}
+  .hero__sub{margin-left:auto;margin-right:auto}
+  .hero__chips{justify-content:center}
+  .hero__art{order:-1}
+  .signup__row{justify-content:center}
+  .pb-grid{grid-template-columns:1fr}
+  .broke-grid{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .fmt-grid{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:1fr 1fr}
+  .nav__links{display:none}
+  .starburst{width:122px;height:122px;font-size:.96rem;top:-30px;right:-6px;padding:20px}
+}
+@media(max-width:680px){
+  .who-grid{grid-template-columns:1fr}
+  .notfor ul{grid-template-columns:1fr}
+  .mod-grid{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:1fr}
+  .me-bio{flex-direction:column;align-items:center;text-align:center}
+  .brand__txt{display:none}
+  .footer__top{flex-direction:column}
+  .footer__bottom{flex-direction:column;gap:8px}
+  .deco{display:none}
+}
+@media(max-width:520px){
+  .wrap{padding:0 18px}
+  .section{padding:clamp(48px,13vw,80px) 0}
+  .btn--lg{font-size:1.14rem;padding:15px 20px 12px}
+  .btn{padding:14px 22px 11px}
+  .price-list li,.notfor li{font-size:.95rem}
+  .me-photo{width:140px;height:170px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .js .reveal{opacity:1!important;transform:none!important}
+  .marquee__track{animation:none;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="nav__in">
+    <a href="#top" class="brand" aria-label="The F**king Playbook home">
+      <span class="brand__mark">TFP</span>
+      <span class="brand__txt">THE&nbsp;F**KING<br>PLAYBOOK</span>
+    </a>
+    <div class="nav__links">
+      <a href="#why-now">Why Now</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#why-me">Why Me</a>
+      <a href="#guarantee">Guarantee</a>
+    </div>
+    <a class="btn btn--sm js-checkout" href="#pricing">Enroll · €1,499</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="section hero sec--teal dots" id="top">
+  <span class="deco bolt-1" aria-hidden="true"><svg viewBox="0 0 26 42"><path d="M15 0 0 24h9l-4 18 21-26h-11l8-16z" fill="#ffd53c" stroke="#1a1510" stroke-width="2.4" stroke-linejoin="round"/></svg></span>
+  <span class="deco bolt-2" aria-hidden="true"><svg viewBox="0 0 26 42"><path d="M15 0 0 24h9l-4 18 21-26h-11l8-16z" fill="#1a1510" stroke="#1a1510" stroke-width="2.4" stroke-linejoin="round"/></svg></span>
+  <span class="deco spark-1" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c1.1 8 3 9.9 12 11-9 1.1-10.9 3-12 12-1.1-9-3-10.9-12-12 9-1.1 10.9-3 12-11z" fill="#fff" stroke="#1a1510" stroke-width="1.6"/></svg></span>
+  <span class="deco spark-2" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c1.1 8 3 9.9 12 11-9 1.1-10.9 3-12 12-1.1-9-3-10.9-12-12 9-1.1 10.9-3 12-11z" fill="#fff" stroke="#1a1510" stroke-width="1.6"/></svg></span>
+
+  <div class="wrap hero__grid">
+    <div class="hero__art reveal">
+      <span class="hero__tape" aria-hidden="true"></span>
+      <img src="playbook-cover.png" width="1054" height="1492"
+           alt="The F**king Playbook: Engineering Growth for Idiots. Course cover by Matei Psatta.">
+    </div>
+
+    <div class="hero__copy">
+      <span class="kicker">A growth course by Matei Psatta · Growth lead behind $150M+ businesses</span>
+      <h1>You don't need to be a genius to win at growth.
+        <span class="hl">You need to follow the f**king playbook.</span></h1>
+      <p class="hero__sub">A 7-module, step-by-step playbook for engineering creator-led,
+        product-led growth in 2026, built from the real campaigns that made Vola.ro one of
+        Europe's leading OTAs, scaled Blindspot across the globe, and made GME GO BRRR the
+        most-upvoted Reddit post in history on an $18 budget.</p>
+
+      <a class="btn btn--lg js-checkout" href="#pricing">Enroll Now · €1,499 →</a>
+      <p class="hero__cta-note">One-time payment · Lifetime access · ROI-refund guarantee</p>
+
+      <form class="signup js-signup">
+        <p class="signup__label">Not ready to commit? Get launch updates →</p>
+        <div class="signup__row">
+          <input type="email" required placeholder="you@company.com" aria-label="Email address">
+          <button type="submit" class="btn btn--yellow btn--sm">Keep Me Posted</button>
+        </div>
+        <p class="signup__done">✓ You're on the list. Watch your inbox.</p>
+      </form>
+
+      <div class="hero__chips">
+        <span class="chip">7 Modules</span>
+        <span class="chip">12–15 Hours</span>
+        <span class="chip chip--teal">Templates · Scripts · Tools</span>
+        <span class="chip">Quarterly Updates</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <div class="marquee__item">#1 most-upvoted Reddit post ever</div>
+    <div class="marquee__item">+750M views generated</div>
+    <div class="marquee__item">+3 Million billboards worldwide</div>
+    <div class="marquee__item">25,000+ clients including Snoop Dogg, Notion, Airbnb</div>
+    <div class="marquee__item">$150M+ Total Transaction Volume</div>
+    <div class="marquee__item">+$10M in incremental EBITDA</div>
+    <div class="marquee__item">#1 most-upvoted Reddit post ever</div>
+    <div class="marquee__item">+750M views generated</div>
+    <div class="marquee__item">+3 Million billboards worldwide</div>
+    <div class="marquee__item">25,000+ clients including Snoop Dogg, Notion, Airbnb</div>
+    <div class="marquee__item">$150M+ Total Transaction Volume</div>
+    <div class="marquee__item">+$10M in incremental EBITDA</div>
+  </div>
+</div>
+
+<!-- ================= WHY NOW ================= -->
+<section class="section sec--paper dots" id="why-now">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Why Now</span>
+      <h2 class="h-sec">Three things broke at once.</h2>
+      <p class="lead">The default distribution playbook of the last decade (SEM, SEO, PPC,
+        email) is bleeding out. Paid acquisition has become a tax that compounds against
+        you, not for you. Here's why this playbook only works right now.</p>
+    </div>
+
+    <div class="broke-grid">
+      <article class="panel broke reveal">
+        <div class="broke__no">01</div>
+        <h3>Paid acquisition collapsed</h3>
+        <p>CACs up, ad relevance down, ROAS shrinking across nearly every B2B and B2C
+          category since 2020. Meta and Google now charge you more to reach fewer of
+          the right people. The math stopped working.</p>
+      </article>
+      <article class="panel broke reveal">
+        <div class="broke__no">02</div>
+        <h3>Building got 100x cheaper</h3>
+        <p>Anyone with Cursor, Lovable, or Claude Code can ship a product in a weekend.
+          Supply of products is exploding. Demand for distribution is unchanged.
+          Code is a commodity. Distribution is the moat.</p>
+      </article>
+      <article class="panel broke reveal">
+        <div class="broke__no">03</div>
+        <h3>Creators went mainstream</h3>
+        <p>LinkedIn, X, TikTok, and YouTube are now the primary discovery layer for B2B
+          and B2C alike. Operators who engineer their own creator economy eat the
+          distribution that used to belong to ad budgets.</p>
+      </article>
+    </div>
+
+    <p class="closer reveal">Miss this wave and you're obsolete by 2028. Catch it and you build
+      the next category leaders. <span class="hl-red">This playbook has a 3–5 year shelf life.
+      The clock is running.</span></p>
+  </div>
+</section>
+
+<!-- ================= NOT A FRAMEWORK ================= -->
+<section class="section sec--teal dots" id="playbook">
+  <div class="wrap pb-grid">
+    <div class="reveal">
+      <span class="kicker">What This Actually Is</span>
+      <h2 class="h-sec">Not a strategy. Not a framework. A&nbsp;playbook.</h2>
+      <p>Strategies make you think. Frameworks make you nod. <strong>Playbooks make you
+        ship.</strong> This isn't a series of mental models. It's a sequence of plays.</p>
+      <p>Pick one. Follow the steps. Ship the experiment. Measure the result. Every module
+        is built around a real campaign or system shipped in production. So specific you
+        can follow it like a coloring book.</p>
+      <p class="pb-tag">
+        <svg viewBox="0 0 60 24" aria-hidden="true"><path d="M2 12h44m0 0-12-9m12 9-12 9" fill="none" stroke="#1a1510" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        If you can color inside the lines, you can follow this playbook.
+      </p>
+    </div>
+
+    <div class="pb-art reveal">
+      <div class="bubble">Even a <span class="hl-red">f**king</span> idiot<br>can do this.</div>
+      <div class="note">
+        <span class="tape tape--l" aria-hidden="true"></span>
+        <span class="tape tape--r" aria-hidden="true"></span>
+        <ol class="note__list">
+          <li><span class="note__num">1</span> Follow the steps.</li>
+          <li><span class="note__num">2</span> Get results.</li>
+          <li><span class="note__num">3</span> Be less f**king stupid.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHO FOR ================= -->
+<section class="section sec--paper dots" id="who">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Who This Is For</span>
+      <h2 class="h-sec">Operators. Not tourists.</h2>
+    </div>
+
+    <div class="who-grid">
+      <article class="panel who-card reveal">
+        <h3>You already run growth</h3>
+        <p>You're a growth lead, head of marketing, founder, or operator at a Series A or
+          B startup. You know your numbers and you know your channels. You're not here to
+          learn growth from zero. You're here to sharpen an operation that already works
+          and stop overpaying for channels that have quietly stopped paying you back.</p>
+      </article>
+      <article class="panel who-card reveal">
+        <h3>You're building your own next thing</h3>
+        <p>You've put in the years and earned the instincts. You've got the capital, the
+          network, and the judgment, and you're getting ready to launch or buy something
+          of your own. You'd rather walk in with a sharp, proven operating system than
+          figure out distribution on the fly.</p>
+      </article>
+    </div>
+
+    <div class="panel notfor reveal">
+      <h3>Who this is NOT for</h3>
+      <ul>
+        <li><span class="mark mark--x" aria-hidden="true">✕</span> Pure beginners with zero growth, marketing, or product experience</li>
+        <li><span class="mark mark--x" aria-hidden="true">✕</span> People hunting for passive income or affiliate hacks</li>
+        <li><span class="mark mark--x" aria-hidden="true">✕</span> Agency owners looking for client-acquisition templates</li>
+        <li><span class="mark mark--x" aria-hidden="true">✕</span> Anyone betting their career on Google Ads or traditional SEO</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CURRICULUM ================= -->
+<section class="section sec--teal dots" id="curriculum">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">The Curriculum</span>
+      <h2 class="h-sec">7 modules. Every one shipped in production.</h2>
+      <p class="lead">Roughly 12–15 hours of pre-recorded content, plus the templates,
+        playbooks, scripts, and tool walkthroughs that make each one immediately
+        executable. Not a series of frameworks, but a sequence of plays.</p>
+    </div>
+
+    <div class="mod-grid">
+      <article class="panel mod reveal">
+        <div class="mod__top"><span class="mod__no">01</span><span class="mod__lbl">Module One</span></div>
+        <h3>The new growth thesis</h3>
+        <p>Why the SEM/SEO/PPC default is dead and distribution is the most valuable
+          skill in the stack. The mental models the rest of the playbook runs on: the
+          leverage stack, audience-product fit, compounding loops vs. transactional
+          channels, and the difference between attention and distribution.</p>
+      </article>
+
+      <article class="panel mod mod--core reveal">
+        <span class="mod__flag">★ Core Module</span>
+        <div class="mod__top"><span class="mod__no">02</span><span class="mod__lbl">Module Two</span></div>
+        <h3>Growth Engineering</h3>
+        <p>Engineer a personal or company social presence into a compounding distribution
+          machine. Platform-specific playbooks for LinkedIn, X, TikTok, and YouTube.
+          Content engines, repurposing systems, hook formulas that survive contact with
+          reality, and the measurement model that separates signal from vanity.</p>
+      </article>
+
+      <article class="panel mod reveal">
+        <div class="mod__top"><span class="mod__no">03</span><span class="mod__lbl">Module Three</span></div>
+        <h3>UGC as growth infrastructure</h3>
+        <p>Turn customers and creators into distribution. The brief-to-distribution
+          pipeline, end to end. How to find, brief, and pay creators without burning
+          budget, plus the mistakes that kill 90% of UGC programs before they start.</p>
+      </article>
+
+      <article class="panel mod reveal">
+        <div class="mod__top"><span class="mod__no">04</span><span class="mod__lbl">Module Four</span></div>
+        <h3>Product-Led Growth mechanics</h3>
+        <p>The product is the channel. Build loops that grow the business without
+          marketing budget. Activation as the real growth lever. Viral loops that
+          actually work in 2026. Most don't. Onboarding that converts, retention
+          as a growth engine.</p>
+      </article>
+
+      <article class="panel mod reveal">
+        <div class="mod__top"><span class="mod__no">05</span><span class="mod__lbl">Module Five</span></div>
+        <h3>AI as the growth lever</h3>
+        <p>How I deployed AI at Vola to run 100,000+ monthly customer conversations at
+          2x the conversion rate of normal traffic. Concrete workflows in n8n and Claude
+          Projects for automation, content production, customer research, and product
+          experiences.</p>
+      </article>
+
+      <article class="panel mod reveal">
+        <div class="mod__top"><span class="mod__no">06</span><span class="mod__lbl">Module Six</span></div>
+        <h3>The growth stack</h3>
+        <p>The actual tools, with prices, setup walkthroughs and templates. No-code automation,
+          analytics and instrumentation, CRM and lifecycle, creator and UGC tools,
+          scheduling. A complete growth stack assembled for under €500 per month.</p>
+      </article>
+
+      <article class="panel mod reveal">
+        <div class="mod__top"><span class="mod__no">07</span><span class="mod__lbl">Module Seven</span></div>
+        <h3>Operator playbooks</h3>
+        <p>How to hire, manage, and fire growth talent. The dashboards your CEO actually
+          wants to see, not the ones agencies sell. Budget allocation across paid,
+          organic, and product. How to pitch a head-of-growth role or position your
+          startup for funding.</p>
+      </article>
+
+      <article class="panel mod reveal" style="display:flex;flex-direction:column;justify-content:center;background:var(--ink);color:var(--card);border-color:var(--ink)">
+        <h3 style="color:var(--yellow);font-size:1.9rem">Follow it to the letter.</h3>
+        <p style="color:var(--card)">This isn't a strategy or a positioning deck. It's
+          something you follow to the letter and apply to your use case. You don't need
+          to be a genius. You need to ship.</p>
+        <a class="btn btn--sm js-checkout" href="#pricing" style="margin-top:16px;align-self:flex-start">See Pricing →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ME ================= -->
+<section class="section sec--paper dots" id="why-me">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Why Me</span>
+      <h2 class="h-sec">Taught by an operator. Not a content creator.</h2>
+      <p class="lead me-lead">Most growth courses are taught by people who teach growth for
+        a living. This one is taught by someone who does it daily, with real numbers,
+        not a Notion template.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="panel stat reveal">
+        <div class="stat__big">$150M+</div>
+        <div class="stat__txt">Total Transaction Volume at Vola.ro, where I'm Head of Growth &amp; AI at one of Europe's leading OTAs.</div>
+      </div>
+      <div class="panel stat reveal">
+        <div class="stat__big">100,000+</div>
+        <div class="stat__txt">Monthly AI conversations live in production, at 2x the conversion of normal traffic.</div>
+      </div>
+      <div class="panel stat reveal">
+        <div class="stat__big">+3M</div>
+        <div class="stat__txt">Billboards worldwide on Blindspot, the DOOH platform I co-founded and scaled globally.</div>
+      </div>
+      <div class="panel stat reveal">
+        <div class="stat__big">25,000+</div>
+        <div class="stat__txt">Clients on Blindspot, the global DOOH platform I co-founded and scaled.</div>
+      </div>
+      <div class="panel stat reveal">
+        <div class="stat__big">#1</div>
+        <div class="stat__txt">Most-upvoted Reddit post in history. The GME GO BRRR Times Square campaign, on an $18 budget.</div>
+      </div>
+      <div class="panel stat reveal">
+        <div class="stat__big">16 yrs</div>
+        <div class="stat__txt">And counting. An unhealthy obsession with growth, marketing &amp; business.</div>
+      </div>
+    </div>
+
+    <div class="panel me-bio reveal">
+      <div class="me-photo">
+        <div class="me-photo__ph" aria-hidden="true">
+          <svg width="52" viewBox="0 0 24 24" fill="#1a1510"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2.2c-5.1 0-9.3 2.6-9.3 6.1V22h18.6v-1.7c0-3.5-4.2-6.1-9.3-6.1Z"/></svg>
+          <span>Add matei.jpg</span>
+        </div>
+        <img src="matei.jpg" alt="Matei Psatta" onerror="this.remove()">
+      </div>
+      <div>
+        <div class="me-name">Matei Psatta</div>
+        <div class="me-role">Forbes 30 Under 30 · And not in prison yet</div>
+        <p>This is likely the only playbook I'll ever write, and it's because I want to
+          train more people I can actually work with (and so all my founder friends stop
+          asking me for help). I scaled Blindspot to 25,000+ clients including MrBeast,
+          Snoop Dogg, Airbnb, Notion, Rihanna, Pepsi, P&amp;G and MSCHF.</p>
+        <div class="logos">
+          <span>MrBeast</span><span>Snoop Dogg</span><span>Airbnb</span><span>Notion</span>
+          <span>Rihanna</span><span>Pepsi</span><span>P&amp;G</span><span>MSCHF</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORMAT ================= -->
+<section class="section sec--teal dots" id="format">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">The Format</span>
+      <h2 class="h-sec">The operating system. Not the country club.</h2>
+      <p class="lead">No live calls. No Slack community. No cohort. The value is in the
+        precision of the steps, not the energy of a room. Premium async beats mediocre
+        live every time.</p>
+    </div>
+
+    <div class="fmt-grid">
+      <div class="panel fmt reveal">
+        <div class="fmt__ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fffef8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
+        <h3>Pre-recorded</h3>
+        <p>12–15 hours of content, plus every template, script, playbook, and tool walkthrough, built to execute, not admire.</p>
+      </div>
+      <div class="panel fmt reveal">
+        <div class="fmt__ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fffef8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg></div>
+        <h3>Lifetime access</h3>
+        <p>Buy it once. Keep it forever. Come back to any play, any time you ship a new experiment.</p>
+      </div>
+      <div class="panel fmt reveal">
+        <div class="fmt__ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fffef8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg></div>
+        <h3>Quarterly updates</h3>
+        <p>The playbook evolves, AI especially. New plays land every quarter at no extra cost, for as long as it stays valid.</p>
+      </div>
+    </div>
+
+    <p class="fmt-quote reveal">This is a playbook, not a workshop.</p>
+  </div>
+</section>
+
+<!-- ================= GUARANTEE ================= -->
+<section class="section sec--paper dots" id="guarantee">
+  <div class="wrap">
+    <div class="guar-wrap reveal">
+      <div class="starburst" aria-hidden="true">NO EXCUSES. JUST GROWTH.</div>
+      <div class="panel guar">
+        <span class="kicker">The Guarantee</span>
+        <h2>The ROI Refund.</h2>
+        <p>Complete the course. Apply at least 3 of the playbooks or experiments inside
+          it for at least 3 months. If you can't show positive ROI on any of them, book
+          a 30-minute call, bring your documented work, and if we both agree the
+          playbook didn't deliver, you get a full refund.</p>
+        <p class="punch">Asymmetric loss to me. Asymmetric win to you. The only filter is
+          your willingness to ship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section sec--red dots" id="results">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Proof</span>
+      <h2 class="h-sec">Don't just take my f**king word for it.</h2>
+    </div>
+
+    <!-- SAMPLE testimonials — replace with real beta-cohort quotes (names + companies) before public launch -->
+    <div class="tgrid">
+      <article class="panel tcard reveal">
+        <div class="tcard__stars" aria-hidden="true">★★★★★</div>
+        <p class="tcard__quote">"We killed our Google Ads in week 3. One creator partnership replaced the entire budget. <span class="hl">CAC down 58%.</span>"</p>
+        <p class="tcard__by">Head of Growth, Series B SaaS</p>
+      </article>
+      <article class="panel tcard reveal">
+        <div class="tcard__stars" aria-hidden="true">★★★★★</div>
+        <p class="tcard__quote">"Other courses hand you frameworks to think about. This hands you a checklist to run. Four experiments shipped in a month."</p>
+        <p class="tcard__by">Marketing Director, DevTool</p>
+      </article>
+      <article class="panel tcard reveal">
+        <div class="tcard__stars" aria-hidden="true">★★★★★</div>
+        <p class="tcard__quote">"Module 2 paid for the whole course in <span class="hl">9 days.</span> Then I stopped counting."</p>
+        <p class="tcard__by">Founder, Fintech startup</p>
+      </article>
+      <article class="panel tcard reveal">
+        <div class="tcard__stars" aria-hidden="true">★★★★★</div>
+        <p class="tcard__quote">"I've paid 'growth experts' €8k a month who delivered less than chapter one of this."</p>
+        <p class="tcard__by">Founder, Series A</p>
+      </article>
+      <article class="panel tcard reveal">
+        <div class="tcard__stars" aria-hidden="true">★★★★★</div>
+        <p class="tcard__quote">"Not motivational. Not clever. It just tells you exactly what to do next. Finally."</p>
+        <p class="tcard__by">Growth Lead, Marketplace</p>
+      </article>
+      <article class="panel tcard reveal">
+        <div class="tcard__stars" aria-hidden="true">★★★★★</div>
+        <p class="tcard__quote">"<span class="hl">200 to 41k</span> followers on LinkedIn in one quarter. Inbound now outpaces our entire SDR team."</p>
+        <p class="tcard__by">VP Marketing, B2B SaaS</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="section sec--teal dots" id="pricing">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+      <span class="kicker">Pricing</span>
+      <h2 class="h-sec">One price. Everything. Forever.</h2>
+    </div>
+
+    <div class="panel price-box reveal">
+      <span class="price-box__tag">The F**king Playbook</span>
+      <h3>Full lifetime access</h3>
+      <div class="price-num">€1,499</div>
+      <div class="price-sub">One-time payment</div>
+
+      <ul class="price-list">
+        <li><span class="mark mark--ok" aria-hidden="true">✓</span> All 7 modules, ~12–15 hours of content</li>
+        <li><span class="mark mark--ok" aria-hidden="true">✓</span> Every template, script, and playbook</li>
+        <li><span class="mark mark--ok" aria-hidden="true">✓</span> Tool walkthroughs &amp; the complete growth stack</li>
+        <li><span class="mark mark--ok" aria-hidden="true">✓</span> Lifetime access. Buy once, keep it forever</li>
+        <li><span class="mark mark--ok" aria-hidden="true">✓</span> Quarterly content updates as the playbook evolves</li>
+        <li><span class="mark mark--ok" aria-hidden="true">✓</span> The ROI-refund guarantee</li>
+      </ul>
+
+      <a class="btn btn--lg js-checkout" href="#" style="width:100%;justify-content:center">Enroll Now →</a>
+      <p class="price-fine">Expensing through a company budget? It's invoiced as the
+        <strong>"Growth Engineering Playbook"</strong>, same product, finance-friendly
+        label for your accounting team.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section sec--paper dots" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+      <span class="kicker">FAQ</span>
+      <h2 class="h-sec">Questions, answered straight.</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq reveal">
+        <summary>Is this for beginners?<span class="faq__plus" aria-hidden="true"></span></summary>
+        <div class="faq__ans"><p>No. If you've never run growth, marketing, or product, this isn't your starting point. It's built for operators leveling up a function that already exists.</p></div>
+      </details>
+      <details class="faq reveal">
+        <summary>What if I apply it and it doesn't work?<span class="faq__plus" aria-hidden="true"></span></summary>
+        <div class="faq__ans"><p>Then you get your money back. Complete the course, apply at least 3 plays for 3 months, and if you can't show positive ROI, it's a full refund. That's the ROI Refund.</p></div>
+      </details>
+      <details class="faq reveal">
+        <summary>Why no community, cohort, or live calls?<span class="faq__plus" aria-hidden="true"></span></summary>
+        <div class="faq__ans"><p>Because this is a playbook, not a workshop. The value is in the precision of the steps, not the energy of a room. Premium async beats mediocre live every time.</p></div>
+      </details>
+      <details class="faq reveal">
+        <summary>How long do I get access?<span class="faq__plus" aria-hidden="true"></span></summary>
+        <div class="faq__ans"><p>Forever. One payment, lifetime access, plus quarterly updates as the playbook evolves.</p></div>
+      </details>
+      <details class="faq reveal">
+        <summary>Won't the tactics be outdated soon?<span class="faq__plus" aria-hidden="true"></span></summary>
+        <div class="faq__ans"><p>The core has a 3 to 5 year shelf life, and quarterly updates keep the tactical layer current, AI especially. When it stops being valid, you'll be the first to know.</p></div>
+      </details>
+      <details class="faq reveal">
+        <summary>Can my company pay for it?<span class="faq__plus" aria-hidden="true"></span></summary>
+        <div class="faq__ans"><p>Yes. It's invoiced as the "Growth Engineering Playbook" so it clears finance without friction. Same product, expense-friendly label.</p></div>
+      </details>
+      <details class="faq reveal">
+        <summary>How is this different from every other growth course?<span class="faq__plus" aria-hidden="true"></span></summary>
+        <div class="faq__ans"><p>Most are taught by people who teach growth for a living. This one is taught by an operator who runs it daily, built around campaigns that actually shipped.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="section sec--red dots final">
+  <div class="wrap reveal">
+    <span class="kicker">No Excuses. Just Growth.</span>
+    <h2>You don't need to be a genius.<br>You need to follow the playbook.</h2>
+    <p>200–400 operators will run this playbook in year one, across startups, scaleups,
+      and their own ventures. The building is done. Distribution is the game now.</p>
+    <div class="final-cta-row">
+      <a class="btn btn--yellow btn--lg js-checkout" href="#">Get The F**king Playbook · €1,499 →</a>
+    </div>
+    <form class="signup js-signup">
+      <p class="signup__label">Or get launch updates &amp; early-access news →</p>
+      <div class="signup__row">
+        <input type="email" required placeholder="you@company.com" aria-label="Email address">
+        <button type="submit" class="btn btn--ink btn--sm">Keep Me Posted</button>
+      </div>
+      <p class="signup__done">✓ You're on the list. Watch your inbox.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="section sec--ink footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="bangers">THE F**KING<br>PLAYBOOK</div>
+        <p>Engineering Growth for Idiots.</p>
+      </div>
+      <svg class="smiley" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="29" fill="#ffd53c" stroke="#1a1510" stroke-width="3.4"/>
+        <circle cx="23" cy="26" r="4.2" fill="#1a1510"/>
+        <circle cx="41" cy="26" r="4.2" fill="#1a1510"/>
+        <path d="M20 38c4 8 20 8 24 0" fill="none" stroke="#1a1510" stroke-width="3.6" stroke-linecap="round"/>
+      </svg>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#why-now">Why Now</a>
+        <a href="#playbook">The Playbook</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#why-me">Why Me</a>
+        <a href="#guarantee">Guarantee</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Matei Psatta. Built for operators, not tourists.</span>
+      <span>A step-by-step playbook for engineering growth in 2026.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.className = "js";
+
+  /* --- checkout link -----------------------------------------------------
+     TODO: replace CHECKOUT_URL with your real checkout link
+     (Stripe Payment Link, Gumroad, Lemon Squeezy, etc.).
+     Every "Enroll" / buy button is wired to it automatically.            */
+  var CHECKOUT_URL = "https://YOUR-CHECKOUT-LINK-HERE";
+
+  document.querySelectorAll("a.js-checkout").forEach(function(a){
+    if(CHECKOUT_URL && CHECKOUT_URL.indexOf("YOUR-CHECKOUT-LINK") === -1){
+      a.href = CHECKOUT_URL;
+      a.target = "_blank";
+      a.rel = "noopener";
+    }
+    /* until a real URL is set, buttons scroll to the pricing section */
+  });
+
+  /* --- email capture forms -----------------------------------------------
+     TODO: wire the submit handler to your email provider / endpoint
+     (ConvertKit, Beehiiv, Mailchimp, a webhook, etc.).                    */
+  document.querySelectorAll("form.js-signup").forEach(function(form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var email = form.querySelector("input[type=email]");
+      if(!email || !email.value.trim()) return;
+      /* --- send `email.value` to your provider here --- */
+      form.classList.add("is-done");
+    });
+  });
+
+  /* --- reveal on scroll --- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    },{threshold:0.12, rootMargin:"0px 0px -8% 0px"});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("in"); });
+  }
+})();
+</script>
+</body>
+</html>
