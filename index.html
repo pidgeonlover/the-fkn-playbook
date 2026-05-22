@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The F**king Playbook: Engineering Growth for Idiots | Matei Psatta</title>
-<meta name="description" content="A 7-module, step-by-step playbook for engineering creator-led, product-led growth in 2026. Built from the real campaigns behind Vola.ro, Blindspot, and the #1 most-upvoted Reddit post in history.">
+<title>The F**king Playbook: Growth Engineering for Idiots | Matei Psatta</title>
+<meta name="description" content="A 7-module, step-by-step playbook for engineering creator-led, product-led growth in 2026. Built from the real campaigns behind Vola, Blindspot, and the #1 most-upvoted Reddit post in history.">
 <meta name="author" content="Matei Psatta">
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="The F**king Playbook: Engineering Growth for Idiots">
+<meta property="og:title" content="The F**king Playbook: Growth Engineering for Idiots">
 <meta property="og:description" content="The step-by-step playbook for engineering growth in 2026. You don't need to be a genius. You need to follow the f**king playbook.">
 <meta property="og:image" content="playbook-cover.png">
 <meta property="og:image:width" content="1054">
@@ -246,9 +246,9 @@ h1,h2,h3{font-family:'Bangers',cursive;font-weight:400;line-height:.96;letter-sp
 
 /* hero decorations */
 .deco{position:absolute;pointer-events:none;z-index:1}
-.deco svg{display:block}
-.bolt-1{top:6%;left:3%;width:34px;transform:rotate(-12deg)}
-.bolt-2{top:14%;right:5%;width:30px;transform:rotate(14deg)}
+.deco svg{display:block;width:100%;height:auto}
+.bolt-1{top:6%;left:3%;width:34px;--r:-12deg}
+.bolt-2{top:14%;right:5%;width:30px;--r:14deg}
 .spark-1{bottom:16%;left:6%;width:30px}
 .spark-2{top:40%;right:2%;width:24px}
 
@@ -621,13 +621,52 @@ a.presale-bar{
 }
 a.presale-bar b{color:var(--yellow);font-weight:400}
 a.presale-bar:hover{background:#241d16}
-.presale-flag{
-  display:inline-block;
-  font-family:'Bangers',cursive;font-size:1rem;letter-spacing:.04em;
+.hero__deal{
+  position:relative;
+  display:inline-block;text-align:center;
   background:var(--red);color:var(--white);
   border:var(--bd);box-shadow:var(--shadow-sm);
-  padding:7px 15px 4px;transform:rotate(-2deg);
-  margin-bottom:18px;
+  padding:14px 26px 12px;
+  margin-bottom:22px;
+  transform:rotate(-1.5deg);
+}
+.hero__deal .tape{
+  position:absolute;width:64px;height:21px;
+  background:rgba(255,213,60,.78);
+  border:1px solid rgba(0,0,0,.3);
+}
+.hero__deal .tape--l{top:-10px;left:-13px;transform:rotate(-27deg)}
+.hero__deal .tape--r{top:-10px;right:-13px;transform:rotate(25deg)}
+.hero__deal-launch{
+  display:block;font-family:'Bangers',cursive;
+  font-size:.92rem;letter-spacing:.06em;
+  color:var(--yellow);margin-bottom:4px;
+}
+.hero__deal-price{
+  display:block;font-family:'Bangers',cursive;
+  font-size:1.55rem;letter-spacing:.02em;line-height:1.08;
+}
+.hero__deal-price s{
+  opacity:.65;font-size:1.15rem;margin-right:7px;
+  text-decoration-thickness:3px;
+}
+.hero__deal-price b{font-weight:400;color:var(--yellow);font-size:1.95rem}
+.pb-note{
+  background:var(--ink);color:var(--card);
+  border:var(--bd);box-shadow:var(--shadow);
+  max-width:900px;margin:clamp(40px,6vw,62px) auto 0;
+  padding:clamp(28px,4vw,44px);
+}
+.pb-note h3{
+  font-size:clamp(1.7rem,3.4vw,2.4rem);text-transform:uppercase;
+  margin-bottom:16px;
+}
+.pb-note p{font-size:1.08rem;font-weight:600;margin-bottom:14px}
+.pb-note p:last-child{margin-bottom:0}
+.pb-note .pb-note__punch{
+  font-family:'Bangers',cursive;font-weight:400;
+  font-size:clamp(1.4rem,3vw,2.05rem);letter-spacing:.02em;line-height:1.16;
+  color:var(--yellow);margin-top:22px;
 }
 .price-old{
   font-family:'Bangers',cursive;font-size:1.25rem;letter-spacing:.03em;
@@ -706,6 +745,38 @@ a.presale-bar:hover{background:#241d16}
 .js .reveal{opacity:0;transform:translateY(26px)}
 .js .reveal.in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
 
+/* ---------- motion ---------- */
+@keyframes floaty{
+  0%,100%{transform:translateY(0) rotate(var(--r,0deg))}
+  50%{transform:translateY(-9px) rotate(var(--r,0deg))}
+}
+@keyframes wiggly{
+  0%,100%{transform:rotate(var(--r,0deg))}
+  50%{transform:rotate(calc(var(--r,0deg) + 5deg))}
+}
+@keyframes twinkle{
+  0%,100%{opacity:1;transform:scale(1) rotate(var(--r,0deg))}
+  50%{opacity:.45;transform:scale(.8) rotate(var(--r,0deg))}
+}
+@keyframes bobby{
+  0%,100%{transform:translateY(0) rotate(var(--r,0deg))}
+  50%{transform:translateY(-7px) rotate(var(--r,0deg))}
+}
+@keyframes ctaPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.04)}
+}
+.deco--bolt{animation:floaty 4.6s ease-in-out infinite}
+.deco--star{animation:wiggly 5s ease-in-out infinite}
+.deco--spark{animation:twinkle 3.6s ease-in-out infinite}
+.deco--scribble{animation:wiggly 6.5s ease-in-out infinite}
+.btn--cta{animation:ctaPulse 2.6s ease-in-out infinite}
+.btn--cta:hover,.btn--cta:active{animation:none}
+.bubble{--r:-3deg;animation:bobby 5.2s ease-in-out infinite}
+.starburst{--r:13deg;animation:wiggly 6s ease-in-out infinite}
+.price-save{--r:12deg;animation:wiggly 5.4s ease-in-out infinite}
+.smiley{animation:wiggly 4.2s ease-in-out infinite}
+
 /* ---------- responsive ---------- */
 @media(max-width:960px){
   .hero__grid{grid-template-columns:1fr;text-align:center}
@@ -754,7 +825,7 @@ a.presale-bar:hover{background:#241d16}
 <body>
 
 <!-- ================= PRE-SALE BAR ================= -->
-<a class="presale-bar" href="#pricing">Pre-sale is live. Reserve your slot for <b>$599</b> before the July 1 launch, then the price becomes $1,699.</a>
+<a class="presale-bar" href="#pricing">Pre-sale is live. Reserve your slot for <b>$699</b> before the July 1 launch, then the price becomes $1,699.</a>
 
 <!-- ================= NAV ================= -->
 <nav class="nav">
@@ -769,22 +840,22 @@ a.presale-bar:hover{background:#241d16}
       <a href="#why-me">Why Me</a>
       <a href="#guarantee">Guarantee</a>
     </div>
-    <a class="btn btn--sm js-checkout" href="#pricing">Reserve · $599</a>
+    <a class="btn btn--sm js-checkout" href="#pricing">Reserve · $699</a>
   </div>
 </nav>
 
 <!-- ================= HERO ================= -->
 <header class="section hero sec--teal dots" id="top">
-  <span class="deco bolt-1" aria-hidden="true"><svg viewBox="0 0 26 42"><path d="M15 0 0 24h9l-4 18 21-26h-11l8-16z" fill="#ffd53c" stroke="#1a1510" stroke-width="2.4" stroke-linejoin="round"/></svg></span>
-  <span class="deco bolt-2" aria-hidden="true"><svg viewBox="0 0 26 42"><path d="M15 0 0 24h9l-4 18 21-26h-11l8-16z" fill="#1a1510" stroke="#1a1510" stroke-width="2.4" stroke-linejoin="round"/></svg></span>
-  <span class="deco spark-1" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c1.1 8 3 9.9 12 11-9 1.1-10.9 3-12 12-1.1-9-3-10.9-12-12 9-1.1 10.9-3 12-11z" fill="#fff" stroke="#1a1510" stroke-width="1.6"/></svg></span>
-  <span class="deco spark-2" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c1.1 8 3 9.9 12 11-9 1.1-10.9 3-12 12-1.1-9-3-10.9-12-12 9-1.1 10.9-3 12-11z" fill="#fff" stroke="#1a1510" stroke-width="1.6"/></svg></span>
+  <span class="deco deco--bolt bolt-1" aria-hidden="true"><svg viewBox="0 0 26 42"><path d="M15 0 0 24h9l-4 18 21-26h-11l8-16z" fill="#ffd53c" stroke="#1a1510" stroke-width="2.4" stroke-linejoin="round"/></svg></span>
+  <span class="deco deco--bolt bolt-2" aria-hidden="true"><svg viewBox="0 0 26 42"><path d="M15 0 0 24h9l-4 18 21-26h-11l8-16z" fill="#1a1510" stroke="#1a1510" stroke-width="2.4" stroke-linejoin="round"/></svg></span>
+  <span class="deco deco--spark spark-1" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c1.1 8 3 9.9 12 11-9 1.1-10.9 3-12 12-1.1-9-3-10.9-12-12 9-1.1 10.9-3 12-11z" fill="#fff" stroke="#1a1510" stroke-width="1.6"/></svg></span>
+  <span class="deco deco--spark spark-2" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c1.1 8 3 9.9 12 11-9 1.1-10.9 3-12 12-1.1-9-3-10.9-12-12 9-1.1 10.9-3 12-11z" fill="#fff" stroke="#1a1510" stroke-width="1.6"/></svg></span>
 
   <div class="wrap hero__grid">
     <div class="hero__art reveal">
       <span class="hero__tape" aria-hidden="true"></span>
       <img src="playbook-cover.png" width="1054" height="1492"
-           alt="The F**king Playbook: Engineering Growth for Idiots. Course cover by Matei Psatta.">
+           alt="The F**king Playbook: Growth Engineering for Idiots. Course cover by Matei Psatta.">
     </div>
 
     <div class="hero__copy">
@@ -792,13 +863,21 @@ a.presale-bar:hover{background:#241d16}
       <h1>You don't need to be a genius to win at growth.
         <span class="hl">You need to follow the f**king playbook.</span></h1>
       <p class="hero__sub">A 7-module, step-by-step playbook for engineering creator-led,
-        product-led growth in 2026, built from the real campaigns that made Vola.ro one of
-        Europe's leading OTAs, scaled Blindspot across the globe, and made GME GO BRRR the
-        most-upvoted Reddit post in history on an $18 budget.</p>
+        product-led growth in 2026, built from the real campaigns that made Vola one of
+        Europe's leading OTAs, scaled Blindspot globally to service clients like Snoop Dogg,
+        Airbnb, Notion, Pepsi &amp; more, and made GME GO BRRR the most-upvoted Reddit post
+        in history on an $18 budget. It's the exact playbook I've run for startups, local
+        and international, to get them their first 1,000 clients or double the client base
+        they already had.</p>
 
-      <div><span class="presale-flag">Pre-sale live · save $1,100 before July 1</span></div>
-      <a class="btn btn--lg js-checkout" href="#pricing">Reserve Your Slot · $599 →</a>
-      <p class="hero__cta-note">Pre-sale price · $1,100 off the $1,699 launch price · lifetime access</p>
+      <div><span class="hero__deal">
+        <span class="tape tape--l" aria-hidden="true"></span>
+        <span class="tape tape--r" aria-hidden="true"></span>
+        <span class="hero__deal-launch">Launching July 1st, 2026</span>
+        <span class="hero__deal-price"><s>$1,699</s> Pre-sale price <b>$699</b></span>
+      </span></div>
+      <a class="btn btn--lg btn--yellow btn--cta js-checkout" href="#pricing">Reserve Your Slot · $699 →</a>
+      <p class="hero__cta-note">Lifetime access · Quarterly updates · ROI-refund guarantee</p>
 
       <form class="signup js-signup">
         <p class="signup__label">Not ready to commit? Get launch updates →</p>
@@ -839,6 +918,7 @@ a.presale-bar:hover{background:#241d16}
 
 <!-- ================= WHY NOW ================= -->
 <section class="section sec--paper dots" id="why-now">
+  <span class="deco deco--bolt" style="top:30px;right:7%;width:25px;--r:15deg" aria-hidden="true"><svg viewBox="0 0 26 42"><path d="M15 0 0 24h9l-4 18 21-26h-11l8-16z" fill="#1a1510" stroke="#1a1510" stroke-width="2.4" stroke-linejoin="round"/></svg></span>
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kicker">Why Now</span>
@@ -880,7 +960,9 @@ a.presale-bar:hover{background:#241d16}
 
 <!-- ================= NOT A FRAMEWORK ================= -->
 <section class="section sec--teal dots" id="playbook">
-  <div class="wrap pb-grid">
+  <span class="deco deco--scribble" style="bottom:32px;right:7%;width:52px;--r:-6deg" aria-hidden="true"><svg viewBox="0 0 44 22"><path d="M2 13C4 4 11 4 13 12 14 18 7 19 9 11 11 4 19 5 23 13 26 19 34 19 36 10 37 5 41 6 42 12" fill="none" stroke="#1a1510" stroke-width="3" stroke-linecap="round"/></svg></span>
+  <div class="wrap">
+    <div class="pb-grid">
     <div class="reveal">
       <span class="kicker">What This Actually Is</span>
       <h2 class="h-sec">Not a strategy. Not a framework. A&nbsp;playbook.</h2>
@@ -906,6 +988,20 @@ a.presale-bar:hover{background:#241d16}
           <li><span class="note__num">3</span> Be less f**king stupid.</li>
         </ol>
       </div>
+    </div>
+    </div>
+
+    <div class="pb-note reveal">
+      <h3>Where every other course quits.</h3>
+      <p>The problem with most courses and strategies: they explain the theory.
+        "You should do Product-Led Growth." "You should do Creator Marketing." They
+        walk you through a few tactical steps, then leave you to figure out the rest.</p>
+      <p>So you start working on the actual project, and you make the mistakes. The
+        ones that quietly cost you months, and sometimes hundreds of thousands of dollars.</p>
+      <p>This is why I created this playbook. It takes you step by step through exactly
+        what to do. No thinking required. Like a coloring book.</p>
+      <p class="pb-note__punch">If you can't make it work with this playbook, I'm
+        (not really) sorry to say it, but you're the bottleneck.</p>
     </div>
   </div>
 </section>
@@ -949,6 +1045,8 @@ a.presale-bar:hover{background:#241d16}
 
 <!-- ================= CURRICULUM ================= -->
 <section class="section sec--teal dots" id="curriculum">
+  <span class="deco deco--bolt" style="top:30px;right:5%;width:27px;--r:17deg" aria-hidden="true"><svg viewBox="0 0 26 42"><path d="M15 0 0 24h9l-4 18 21-26h-11l8-16z" fill="#ffd53c" stroke="#1a1510" stroke-width="2.4" stroke-linejoin="round"/></svg></span>
+  <span class="deco deco--star" style="bottom:30px;left:5%;width:30px;--r:-9deg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 1 14.6 8.4 22.5 8.6 16.2 13.4 18.5 20.9 12 16.4 5.5 20.9 7.8 13.4 1.5 8.6 9.4 8.4Z" fill="#1a1510" stroke="#1a1510" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kicker">The Curriculum</span>
@@ -1034,6 +1132,7 @@ a.presale-bar:hover{background:#241d16}
 
 <!-- ================= WHY ME ================= -->
 <section class="section sec--paper dots" id="why-me">
+  <span class="deco deco--star" style="top:34px;right:6%;width:30px;--r:12deg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 1 14.6 8.4 22.5 8.6 16.2 13.4 18.5 20.9 12 16.4 5.5 20.9 7.8 13.4 1.5 8.6 9.4 8.4Z" fill="#e5392c" stroke="#1a1510" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kicker">Why Me</span>
@@ -1046,7 +1145,7 @@ a.presale-bar:hover{background:#241d16}
     <div class="stat-grid">
       <div class="panel stat reveal">
         <div class="stat__big">$150M+</div>
-        <div class="stat__txt">Total Transaction Volume at Vola.ro, where I'm Head of Growth &amp; AI at one of Europe's leading OTAs.</div>
+        <div class="stat__txt">Total Transaction Volume at Vola, where I'm Head of Growth &amp; AI at one of Europe's leading OTAs.</div>
       </div>
       <div class="panel stat reveal">
         <div class="stat__big">100,000+</div>
@@ -1148,6 +1247,7 @@ a.presale-bar:hover{background:#241d16}
 
 <!-- ================= TESTIMONIALS ================= -->
 <section class="section sec--red dots" id="results">
+  <span class="deco deco--spark" style="top:34px;left:6%;width:30px" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c1.1 8 3 9.9 12 11-9 1.1-10.9 3-12 12-1.1-9-3-10.9-12-12 9-1.1 10.9-3 12-11z" fill="#ffd53c" stroke="#1a1510" stroke-width="1.6"/></svg></span>
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kicker">Proof</span>
@@ -1192,6 +1292,8 @@ a.presale-bar:hover{background:#241d16}
 
 <!-- ================= PRICING ================= -->
 <section class="section sec--teal dots" id="pricing">
+  <span class="deco deco--bolt" style="top:30px;left:5%;width:27px;--r:-13deg" aria-hidden="true"><svg viewBox="0 0 26 42"><path d="M15 0 0 24h9l-4 18 21-26h-11l8-16z" fill="#ffd53c" stroke="#1a1510" stroke-width="2.4" stroke-linejoin="round"/></svg></span>
+  <span class="deco deco--star" style="bottom:30px;right:6%;width:30px;--r:9deg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 1 14.6 8.4 22.5 8.6 16.2 13.4 18.5 20.9 12 16.4 5.5 20.9 7.8 13.4 1.5 8.6 9.4 8.4Z" fill="#1a1510" stroke="#1a1510" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
   <div class="wrap">
     <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
       <span class="kicker">Pre-sale</span>
@@ -1199,11 +1301,11 @@ a.presale-bar:hover{background:#241d16}
     </div>
 
     <div class="panel price-box reveal">
-      <div class="price-save" aria-hidden="true">$1,100 off</div>
+      <div class="price-save" aria-hidden="true">$1,000 off</div>
       <span class="price-box__tag">Founding pre-sale</span>
       <h3>Lifetime access</h3>
       <div class="price-old">Launch price <s>$1,699</s></div>
-      <div class="price-num">$599</div>
+      <div class="price-num">$699</div>
       <div class="price-sub">Pre-sale price · reserve before July 1</div>
 
       <div class="countdown-wrap">
@@ -1216,7 +1318,7 @@ a.presale-bar:hover{background:#241d16}
       </div>
 
       <ul class="price-list">
-        <li><span class="mark mark--ok" aria-hidden="true">✓</span> Founding pre-sale price, $1,100 below the $1,699 launch price</li>
+        <li><span class="mark mark--ok" aria-hidden="true">✓</span> Founding pre-sale price, $1,000 below the $1,699 launch price</li>
         <li><span class="mark mark--ok" aria-hidden="true">✓</span> All 7 modules, ~12–15 hours of content</li>
         <li><span class="mark mark--ok" aria-hidden="true">✓</span> Every template, script, and playbook</li>
         <li><span class="mark mark--ok" aria-hidden="true">✓</span> Tool walkthroughs &amp; the complete growth stack</li>
@@ -1225,9 +1327,9 @@ a.presale-bar:hover{background:#241d16}
         <li><span class="mark mark--ok" aria-hidden="true">✓</span> The ROI-refund guarantee</li>
       </ul>
 
-      <a class="btn btn--lg js-checkout" href="#" style="width:100%;justify-content:center">Reserve My Slot · $599 →</a>
+      <a class="btn btn--lg js-checkout" href="#" style="width:100%;justify-content:center">Reserve My Slot · $699 →</a>
       <p class="price-fine">On July 1 the playbook launches and the price becomes $1,699.
-        Reserve now and your $599 founding price is locked in for good. Expensing through a
+        Reserve now and your $699 founding price is locked in for good. Expensing through a
         company budget? It's invoiced as the <strong>"Growth Engineering Playbook"</strong>,
         same product, finance-friendly label for your accounting team.</p>
     </div>
@@ -1236,6 +1338,7 @@ a.presale-bar:hover{background:#241d16}
 
 <!-- ================= FAQ ================= -->
 <section class="section sec--paper dots" id="faq">
+  <span class="deco deco--scribble" style="top:34px;right:7%;width:50px;--r:8deg" aria-hidden="true"><svg viewBox="0 0 44 22"><path d="M2 13C4 4 11 4 13 12 14 18 7 19 9 11 11 4 19 5 23 13 26 19 34 19 36 10 37 5 41 6 42 12" fill="none" stroke="#1a1510" stroke-width="3" stroke-linecap="round"/></svg></span>
   <div class="wrap">
     <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
       <span class="kicker">FAQ</span>
@@ -1245,7 +1348,7 @@ a.presale-bar:hover{background:#241d16}
     <div class="faq-list">
       <details class="faq reveal">
         <summary>What is the pre-sale, and what happens on July 1?<span class="faq__plus" aria-hidden="true"></span></summary>
-        <div class="faq__ans"><p>Right now you can reserve your slot for $599. The playbook launches on July 1, when the price becomes $1,699 and you get full access. Reserve before launch and your $599 founding price is locked in, that's $1,100 saved.</p></div>
+        <div class="faq__ans"><p>Right now you can reserve your slot for $699. The playbook launches on July 1, when the price becomes $1,699 and you get full access. Reserve before launch and your $699 founding price is locked in, that's $1,000 saved.</p></div>
       </details>
       <details class="faq reveal">
         <summary>Is this for beginners?<span class="faq__plus" aria-hidden="true"></span></summary>
@@ -1281,13 +1384,14 @@ a.presale-bar:hover{background:#241d16}
 
 <!-- ================= FINAL CTA ================= -->
 <section class="section sec--red dots final">
+  <span class="deco deco--spark" style="top:36px;right:8%;width:30px" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c1.1 8 3 9.9 12 11-9 1.1-10.9 3-12 12-1.1-9-3-10.9-12-12 9-1.1 10.9-3 12-11z" fill="#ffd53c" stroke="#1a1510" stroke-width="1.6"/></svg></span>
   <div class="wrap reveal">
     <span class="kicker">No Excuses. Just Growth.</span>
     <h2>You don't need to be a genius.<br>You need to follow the playbook.</h2>
     <p>The building is done, distribution is the game now. Reserve your slot before July 1
-      and lock the playbook in at $599, instead of $1,699 when it launches.</p>
+      and lock the playbook in at $699, instead of $1,699 when it launches.</p>
     <div class="final-cta-row">
-      <a class="btn btn--yellow btn--lg js-checkout" href="#">Reserve Your Slot · $599 →</a>
+      <a class="btn btn--yellow btn--lg btn--cta js-checkout" href="#">Reserve Your Slot · $699 →</a>
     </div>
     <form class="signup js-signup">
       <p class="signup__label">Or get launch updates &amp; early-access news →</p>
@@ -1306,7 +1410,7 @@ a.presale-bar:hover{background:#241d16}
     <div class="footer__top">
       <div class="footer__brand">
         <div class="bangers">THE F**KING<br>PLAYBOOK</div>
-        <p>Engineering Growth for Idiots.</p>
+        <p>Growth Engineering for Idiots.</p>
       </div>
       <svg class="smiley" viewBox="0 0 64 64" aria-hidden="true">
         <circle cx="32" cy="32" r="29" fill="#ffd53c" stroke="#1a1510" stroke-width="3.4"/>
